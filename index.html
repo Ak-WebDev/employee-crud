@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Form</title>
+</head>
+<body>
+<h2>Employee Form</h2>
+
+<form id="employeeForm">
+    <input type="text" id="employeeId" placeholder="Employee ID" required><br><br>
+    <input type="text" id="employeeName" placeholder="Employee Name" required><br><br>
+    <input type="email" id="employeeEmail" placeholder="Employee Email" required><br><br>
+    <input type="text" id="location" placeholder="Location" required><br><br>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    document.getElementById("employeeForm").addEventListener("submit",function(e)){
+    e.preventDefault();
+
+    fetch("/employees",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+    employeeId=employeeId.value,
+    employeeName=employeeName.value,
+    employeeEmail=employeeEmail.value,
+    location=location.value
+    })
+    }).then(()=> alert("Employee Saved Successfully));
+    });
+</script>
+</body>
+</html>

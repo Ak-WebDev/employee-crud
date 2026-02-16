@@ -38,4 +38,4 @@ This is a Spring Boot based RESTful application that performs complete CRUD
 All REST APIs are tested using Postman.
 
 ## Author
-Your Name
+Akhilesh Srivastav
